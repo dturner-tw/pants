@@ -9,6 +9,13 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public final class Greeting {
+
+  Object MORX = new Morx() {
+    public int fleem() {
+      return -1;
+    }
+  };
+
   public static String greetFromFile(String filename) throws IOException {
     FileInputStream is = new FileInputStream(filename);
     try {
@@ -39,3 +46,5 @@ public final class Greeting {
       // not called. placates checkstyle
   }
 }
+
+interface Morx {}
