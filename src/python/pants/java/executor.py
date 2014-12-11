@@ -202,4 +202,4 @@ class SubprocessExecutor(Executor):
       try:
         return subprocess.Popen(cmd, cwd=cwd, **subprocess_args)
       except OSError as e:
-        raise self.Error('Problem executing {0}: {1}'.format(self._distribution.java, e))
+        raise self.Error('Problem executing {java}: {error}.  Command-line was:\n{cmd}'.format(java=self._distribution.java, error=e, cmd=" ".join(cmd)))
